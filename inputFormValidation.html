@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>inputFormValidation</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+        <form id="myForm">
+          <input type="text" id="name" placeholder="Name" required>
+          <br>
+          <br>
+          <input type="email" id="email" placeholder="Email" required>
+          <br>
+          <br>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    
+      <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+    
+          if (name && email) {
+            alert("Form submitted successfully!");
+          } else {
+            alert("Please fill out all fields.");
+          }
+        });
+      </script>
+  </body>
+</html>
